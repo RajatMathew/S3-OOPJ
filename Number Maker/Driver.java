@@ -6,17 +6,17 @@ public class Driver
     {
         NumberMaker nm = new NumberMaker();
         Scanner scan = new Scanner(System.in);
-        int x[][] = nm.createTestData();
-        String s, s2;
+        String fileName1, fileName2;
+        int testData[][] = nm.createTestData();
 
         System.out.println("Enter the file name:");
-        s = scan.nextLine();
-        nm.writeData(x, s);
+        fileName1 = scan.nextLine();
+        nm.writeData(testData, fileName1);
 
         System.out.println("Enter the file name to read:");
-        s2 = scan.nextLine();
+        fileName2 = scan.nextLine();
 
         System.out.println("The file contents are:");
-        nm.readData(s2);
+        nm.readData(fileName2);
     }
 }
