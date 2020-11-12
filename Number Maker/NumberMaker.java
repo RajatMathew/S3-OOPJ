@@ -8,23 +8,23 @@ public class NumberMaker
 {
     public int[][] createTestData()
     {
-        int r, c;
+        int row, col;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the number of rows in the matrix");
-        r = sc.nextInt();
+        row = sc.nextInt();
 
         System.out.println("Enter the number of columns in the matrix");
-        c = sc.nextInt();
+        col = sc.nextInt();
 
-        int ar[][] = new int [r][c];
+        int testData[][] = new int [row][col];
 
         System.out.println("Enter the elements in the matrix:");
-        for(int i=0; i<r; i++)
-            for(int j=0; j<c; j++)
-                ar[i][j] = sc.nextInt();
+        for(int i=0; i<row; i++)
+            for(int j=0; j<col; j++)
+                testData[i][j] = sc.nextInt();
 
-        return ar;
+        return testData;
     }
     public void writeData(int[][] testData, String fileName)
     {
@@ -44,7 +44,7 @@ public class NumberMaker
         }
         catch (IOException e)
         {
-            System.out.println("An error occured.");
+            System.out.println("An unknown error occured. Please try again.");
         }
 
     }
