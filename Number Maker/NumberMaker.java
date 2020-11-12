@@ -57,16 +57,13 @@ public class NumberMaker
             Scanner sc = new Scanner(txtFile);
             while (sc.hasNextLine())
             {
-
                 System.out.println(sc.nextLine());
-                //System.out.println("\n");
             }
             sc.close();
         }
         catch (FileNotFoundException e)
         {
             System.out.println("File Not Found Exception");
-            e.printStackTrace();
         }
     }
 }
