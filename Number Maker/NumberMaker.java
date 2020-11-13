@@ -6,26 +6,29 @@ import java.util.Scanner;
 
 public class NumberMaker
 {
+    Scanner scan;
+    public NumberMaker(Scanner scan)
+    {
+        this.scan = scan;
+    }
     public int[][] createTestData()
     {
-        int row, col;
-        Scanner sc = new Scanner(System.in);
-
+        int r, c;
+        
         System.out.println("Enter the number of rows in the matrix");
-        row = sc.nextInt();
+        r = scan.nextInt();
 
         System.out.println("Enter the number of columns in the matrix");
-        col = sc.nextInt();
+        c = scan.nextInt();
 
-        int testData[][] = new int [row][col];
+        int ar[][] = new int [r][c];
 
         System.out.println("Enter the elements in the matrix:");
-        for(int i=0; i<row; i++)
-            for(int j=0; j<col; j++)
-                testData[i][j] = sc.nextInt();
-        
-        sc.close();
-        return testData;
+        for(int i=0; i<r; i++)
+            for(int j=0; j<c; j++)
+                ar[i][j] = scan.nextInt();
+
+        return ar;
     }
     public void writeData(int[][] testData, String fileName)
     {
@@ -45,7 +48,7 @@ public class NumberMaker
         }
         catch (IOException e)
         {
-            System.out.println("An unknown error occured. Please try again.");
+            System.out.println("An error occured.");
         }
 
     }
@@ -60,7 +63,6 @@ public class NumberMaker
             {
                 System.out.println(sc.nextLine());
             }
-            sc.close();
         }
         catch (FileNotFoundException e)
         {
