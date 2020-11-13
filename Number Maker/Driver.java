@@ -4,19 +4,21 @@ public class Driver
 {
     public static void main (String args[])
     {
-        NumberMaker nm = new NumberMaker();
         Scanner scan = new Scanner(System.in);
-        String fileName1, fileName2;
-        int testData[][] = nm.createTestData();
+        NumberMaker nm = new NumberMaker(scan);
+        
+        int x[][] = nm.createTestData();
+        String s, s2;
 
         System.out.println("Enter the file name:");
-        fileName1 = scan.nextLine();
-        nm.writeData(testData, fileName1);
+        
+        s = scan.next();
 
+        nm.writeData(x, s);
         System.out.println("Enter the file name to read:");
-        fileName2 = scan.nextLine();
+        s2 = scan.next();
 
         System.out.println("The file contents are:");
-        nm.readData(fileName2);
+        nm.readData(s2);
     }
 }
